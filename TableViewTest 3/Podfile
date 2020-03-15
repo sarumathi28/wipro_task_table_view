@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TableViewTest' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+pod 'SDWebImage', '~> 5.3.1'
+pod 'Alamofire'
+
+  target 'TableViewTestTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TableViewTestUITests' do
+    # Pods for testing
+  end
+
+end
