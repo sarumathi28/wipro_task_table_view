@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReachabilitySwift
 
 class TableViewController: UIViewController {
     
@@ -25,8 +26,18 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         self.viewModel = TableViewModel()
         // Do any additional setup after loading the view.
-        self.refreshScreen()
-        
+        if Reachability.init()?.isReachableViaWiFi == true
+        {
+            print("Connected")
+            self.refreshScreen()
+        }
+        else
+        {
+            let controller = UIAlertController(title: "No Internet Detected", message: "This app requires an Internet connection", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            controller.addAction(ok)
+            present(controller, animated: true, completion: nil)
+        }
     }
     
     func setupTableView() {

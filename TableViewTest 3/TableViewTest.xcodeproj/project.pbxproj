@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0244254F242CEC7800E4219F /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0244254E242CEC7800E4219F /* ReachabilityManager.swift */; };
 		55F60051C5E3B4B45C556169 /* Pods_TableViewTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1219565A530DAB7352D0B6 /* Pods_TableViewTest.framework */; };
 		7562EDA98EB14930DF38E6BE /* Pods_TableViewTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC0D47212779758F1BB4BAB /* Pods_TableViewTestTests.framework */; };
 		AC6A492424163AE100972F0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A492324163AE100972F0D /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0244254E242CEC7800E4219F /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		1C107A0ECA7313FD359F08A7 /* Pods-TableViewTest-TableViewTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewTest-TableViewTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-TableViewTest-TableViewTestUITests/Pods-TableViewTest-TableViewTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		312CF63EF656BE3198EA6238 /* Pods-TableViewTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewTestTests.debug.xcconfig"; path = "Target Support Files/Pods-TableViewTestTests/Pods-TableViewTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4406BD1B3FD64382E6900247 /* Pods-TableViewTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewTest.debug.xcconfig"; path = "Target Support Files/Pods-TableViewTest/Pods-TableViewTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				AC6A493124163AE300972F0D /* LaunchScreen.storyboard */,
 				AC6A493424163AE300972F0D /* Info.plist */,
 				AC6A492C24163AE100972F0D /* TableViewTest.xcdatamodeld */,
+				0244254E242CEC7800E4219F /* ReachabilityManager.swift */,
 			);
 			path = TableViewTest;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0244254F242CEC7800E4219F /* ReachabilityManager.swift in Sources */,
 				AC6A492E24163AE100972F0D /* TableViewTest.xcdatamodeld in Sources */,
 				F39276F6241652FB00ACF27F /* TableViewCell.swift in Sources */,
 				ACCF3C4824164CCC00F9DA0C /* TableViewModel.swift in Sources */,
@@ -603,7 +607,9 @@
 			baseConfigurationReference = 4406BD1B3FD64382E6900247 /* Pods-TableViewTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TableViewTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -612,6 +618,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = charu.TableViewTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -622,7 +629,9 @@
 			baseConfigurationReference = 68936F06370BA80B44ACA5AA /* Pods-TableViewTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TableViewTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -631,6 +640,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = charu.TableViewTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

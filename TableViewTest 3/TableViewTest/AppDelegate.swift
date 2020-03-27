@@ -13,14 +13,21 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let viewController = TableViewController()
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
            window = UIWindow(frame: UIScreen.main.bounds)
-           let viewController = TableViewController()
            window?.rootViewController = UINavigationController(rootViewController: viewController)
            window?.makeKeyAndVisible()
+        ReachabilityManager.shared.startMonitoring()
+
            return true
+    }
+    func applicationWillEnterForeground(_ application: UIApplication){
+       // Stops monitoring network reachability status changes
+       ReachabilityManager.shared.stopMonitoring()
     }
 
     // MARK: UISceneSession Lifecycle
