@@ -10,38 +10,32 @@ import XCTest
 @testable import TableViewTest
 
 class TableViewTestTests: XCTestCase {
-    var tableViewController: TableViewController!
     var viewModel: TableViewModel!
 
     override func setUp() {
-        tableViewController = TableViewController()
         viewModel = TableViewModel()
+        var array = [TableModel.TableCellData]()
+        let title = "USA"
+        array.append(TableModel.TableCellData(title: "Flag", description: nil, imageHref: nil))
+        array.append(TableModel.TableCellData(title: "Transportation", description: "Transportation Transportation Transportation Transportation Transportation", imageHref: nil))
+        let dataMdl = TableModel(title: title, rows: array)
+        viewModel.updateData(dataMdl: dataMdl)
+
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
-    func testHasATableView() {
-        XCTAssertNotNil(tableViewController.tableView)
+    
+    func testGetTitle(){
+        XCTAssertTrue(viewModel.getTitle() == "USA")
     }
-    func testTableViewConformsToTableViewDataSourceProtocol() {
-        XCTAssertTrue(tableViewController.conforms(to: UITableViewDataSource.self))
-        XCTAssertTrue(tableViewController.responds(to: #selector(tableViewController.tableView(_:numberOfRowsInSection:))))
-        XCTAssertTrue(tableViewController.responds(to: #selector(tableViewController.tableView(_:cellForRowAt:))))
+    
+    func testGetNumberOfRows(){
+        XCTAssertTrue(viewModel.getNumberOfRows() == 2)
     }
-
-    func testJSONMapping() throws {
-        guard let url = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json") else{
-                   XCTFail("URL not working")
-                   return
-               }
-        print(url)
-        
-        self.viewModel.getData(onSuccess: {
-            print("Success")
-            XCTAssertEqual(self.viewModel.data?.title, "About Canada")
-
-        }) { onFailure in
-            print("Failure")
-        }
+    
+    func testGetData(){
+        let firstData = viewModel.dataToShow[0]
+        let temp = TableModel.TableCellData(title: "Flag", description: nil, imageHref: nil)
+        XCTAssertTrue(firstData == temp)
     }
     
 }
