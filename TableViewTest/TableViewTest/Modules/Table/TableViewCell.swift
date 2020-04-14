@@ -74,7 +74,7 @@ class TableViewCell: UITableViewCell {
     }
     
     func setupViews(data:TableModel.TableCellData?) {
-      
+        
         self.productImage.sd_setImage(with: URL(string:(data?.imageHref) ?? ""), placeholderImage: UIImage(named: "placeholder"), options: .continueInBackground, context: nil)
         self.productNameLabel.text = data?.title ?? "N/A"
         self.productDescriptionLabel.text = data?.description ?? "N/A"

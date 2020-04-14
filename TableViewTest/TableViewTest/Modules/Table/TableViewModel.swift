@@ -13,6 +13,7 @@ import Alamofire
 class TableViewModel {
     var dataToShow = [TableModel.TableCellData?]()
     var data:TableModel?
+    let urlString = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
     
     func getData(onSuccess: @escaping()->(), onFailure: @escaping(String)->()){
         guard let url = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json") else{

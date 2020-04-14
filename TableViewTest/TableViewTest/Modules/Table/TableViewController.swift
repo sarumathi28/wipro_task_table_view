@@ -19,7 +19,6 @@ class TableViewController: UIViewController {
         super.loadView()
         safeArea = view.layoutMarginsGuide
         self.setupTableView()
-        
     }
     
     override func viewDidLoad() {
@@ -50,7 +49,6 @@ class TableViewController: UIViewController {
         tableView.estimatedRowHeight = 80
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         tableView.pullToRefreshControl?.addTarget(self, action: #selector(self.refreshScreen), for: .valueChanged)
-        
     }
     
     @objc func refreshScreen(){
@@ -66,7 +64,6 @@ class TableViewController: UIViewController {
                 self?.showAlert(message:msg)
         })
     }
-    
 }
 
 extension TableViewController:UITableViewDataSource, UITableViewDelegate{
